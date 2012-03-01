@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2E5DC7015002021008AE3A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E5DC6F15002021008AE3A3 /* Cocoa.framework */; };
+		C2E5DC7A15002021008AE3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E5DC7815002021008AE3A3 /* InfoPlist.strings */; };
+		C2E5DC7C15002021008AE3A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DC7B15002021008AE3A3 /* main.m */; };
+		C2E5DC8015002021008AE3A3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C2E5DC7E15002021008AE3A3 /* Credits.rtf */; };
+		C2E5DC8315002021008AE3A3 /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DC8215002021008AE3A3 /* MAAppDelegate.m */; };
+		C2E5DC8615002021008AE3A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E5DC8415002021008AE3A3 /* MainMenu.xib */; };
+		C2E5DC8E15002021008AE3A3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E5DC8D15002021008AE3A3 /* SenTestingKit.framework */; };
+		C2E5DC8F15002021008AE3A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E5DC6F15002021008AE3A3 /* Cocoa.framework */; };
+		C2E5DC9715002021008AE3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E5DC9515002021008AE3A3 /* InfoPlist.strings */; };
+		C2E5DC9A15002021008AE3A3 /* NSRectangleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DC9915002021008AE3A3 /* NSRectangleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2E5DC9015002021008AE3A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2E5DC6215002021008AE3A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2E5DC6A15002021008AE3A3;
+			remoteInfo = NSRectangle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C2E5DC6B15002021008AE3A3 /* NSRectangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSRectangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E5DC6F15002021008AE3A3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C2E5DC7215002021008AE3A3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C2E5DC7315002021008AE3A3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C2E5DC7415002021008AE3A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C2E5DC7715002021008AE3A3 /* NSRectangle-Info.plist */ = {isa = PBXFileReference; path = "NSRectangle-Info.plist"; sourceTree = "<group>"; };
+		C2E5DC7915002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C2E5DC7B15002021008AE3A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C2E5DC7D15002021008AE3A3 /* NSRectangle-Prefix.pch */ = {isa = PBXFileReference; path = "NSRectangle-Prefix.pch"; sourceTree = "<group>"; };
+		C2E5DC7F15002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C2E5DC8115002021008AE3A3 /* MAAppDelegate.h */ = {isa = PBXFileReference; path = MAAppDelegate.h; sourceTree = "<group>"; };
+		C2E5DC8215002021008AE3A3 /* MAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAAppDelegate.m; sourceTree = "<group>"; };
+		C2E5DC8515002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C2E5DC8C15002021008AE3A3 /* NSRectangleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSRectangleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E5DC8D15002021008AE3A3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C2E5DC9415002021008AE3A3 /* NSRectangleTests-Info.plist */ = {isa = PBXFileReference; path = "NSRectangleTests-Info.plist"; sourceTree = "<group>"; };
+		C2E5DC9615002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C2E5DC9815002021008AE3A3 /* NSRectangleTests.h */ = {isa = PBXFileReference; path = NSRectangleTests.h; sourceTree = "<group>"; };
+		C2E5DC9915002021008AE3A3 /* NSRectangleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSRectangleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2E5DC6815002021008AE3A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E5DC7015002021008AE3A3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2E5DC8815002021008AE3A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E5DC8E15002021008AE3A3 /* SenTestingKit.framework in Frameworks */,
+				C2E5DC8F15002021008AE3A3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C2E5DC6015002021008AE3A3 = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC7515002021008AE3A3 /* NSRectangle */,
+				C2E5DC9215002021008AE3A3 /* NSRectangleTests */,
+				C2E5DC6E15002021008AE3A3 /* Frameworks */,
+				C2E5DC6C15002021008AE3A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2E5DC6C15002021008AE3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC6B15002021008AE3A3 /* NSRectangle.app */,
+				C2E5DC8C15002021008AE3A3 /* NSRectangleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2E5DC6E15002021008AE3A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC6F15002021008AE3A3 /* Cocoa.framework */,
+				C2E5DC8D15002021008AE3A3 /* SenTestingKit.framework */,
+				C2E5DC7115002021008AE3A3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2E5DC7115002021008AE3A3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC7215002021008AE3A3 /* AppKit.framework */,
+				C2E5DC7315002021008AE3A3 /* CoreData.framework */,
+				C2E5DC7415002021008AE3A3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C2E5DC7515002021008AE3A3 /* NSRectangle */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC8115002021008AE3A3 /* MAAppDelegate.h */,
+				C2E5DC8215002021008AE3A3 /* MAAppDelegate.m */,
+				C2E5DC8415002021008AE3A3 /* MainMenu.xib */,
+				C2E5DC7615002021008AE3A3 /* Supporting Files */,
+			);
+			path = NSRectangle;
+			sourceTree = "<group>";
+		};
+		C2E5DC7615002021008AE3A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC7715002021008AE3A3 /* NSRectangle-Info.plist */,
+				C2E5DC7815002021008AE3A3 /* InfoPlist.strings */,
+				C2E5DC7B15002021008AE3A3 /* main.m */,
+				C2E5DC7D15002021008AE3A3 /* NSRectangle-Prefix.pch */,
+				C2E5DC7E15002021008AE3A3 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C2E5DC9215002021008AE3A3 /* NSRectangleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC9815002021008AE3A3 /* NSRectangleTests.h */,
+				C2E5DC9915002021008AE3A3 /* NSRectangleTests.m */,
+				C2E5DC9315002021008AE3A3 /* Supporting Files */,
+			);
+			path = NSRectangleTests;
+			sourceTree = "<group>";
+		};
+		C2E5DC9315002021008AE3A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5DC9415002021008AE3A3 /* NSRectangleTests-Info.plist */,
+				C2E5DC9515002021008AE3A3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2E5DC6A15002021008AE3A3 /* NSRectangle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2E5DC9D15002021008AE3A3 /* Build configuration list for PBXNativeTarget "NSRectangle" */;
+			buildPhases = (
+				C2E5DC6715002021008AE3A3 /* Sources */,
+				C2E5DC6815002021008AE3A3 /* Frameworks */,
+				C2E5DC6915002021008AE3A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NSRectangle;
+			productName = NSRectangle;
+			productReference = C2E5DC6B15002021008AE3A3 /* NSRectangle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C2E5DC8B15002021008AE3A3 /* NSRectangleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2E5DCA015002021008AE3A3 /* Build configuration list for PBXNativeTarget "NSRectangleTests" */;
+			buildPhases = (
+				C2E5DC8715002021008AE3A3 /* Sources */,
+				C2E5DC8815002021008AE3A3 /* Frameworks */,
+				C2E5DC8915002021008AE3A3 /* Resources */,
+				C2E5DC8A15002021008AE3A3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2E5DC9115002021008AE3A3 /* PBXTargetDependency */,
+			);
+			name = NSRectangleTests;
+			productName = NSRectangleTests;
+			productReference = C2E5DC8C15002021008AE3A3 /* NSRectangleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2E5DC6215002021008AE3A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MA;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = C2E5DC6515002021008AE3A3 /* Build configuration list for PBXProject "NSRectangle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C2E5DC6015002021008AE3A3;
+			productRefGroup = C2E5DC6C15002021008AE3A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2E5DC6A15002021008AE3A3 /* NSRectangle */,
+				C2E5DC8B15002021008AE3A3 /* NSRectangleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2E5DC6915002021008AE3A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E5DC7A15002021008AE3A3 /* InfoPlist.strings in Resources */,
+				C2E5DC8015002021008AE3A3 /* Credits.rtf in Resources */,
+				C2E5DC8615002021008AE3A3 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2E5DC8915002021008AE3A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E5DC9715002021008AE3A3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C2E5DC8A15002021008AE3A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2E5DC6715002021008AE3A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E5DC7C15002021008AE3A3 /* main.m in Sources */,
+				C2E5DC8315002021008AE3A3 /* MAAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2E5DC8715002021008AE3A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E5DC9A15002021008AE3A3 /* NSRectangleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2E5DC9115002021008AE3A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2E5DC6A15002021008AE3A3 /* NSRectangle */;
+			targetProxy = C2E5DC9015002021008AE3A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C2E5DC7815002021008AE3A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2E5DC7915002021008AE3A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C2E5DC7E15002021008AE3A3 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2E5DC7F15002021008AE3A3 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C2E5DC8415002021008AE3A3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2E5DC8515002021008AE3A3 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		C2E5DC9515002021008AE3A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2E5DC9615002021008AE3A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2E5DC9B15002021008AE3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C2E5DC9C15002021008AE3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C2E5DC9E15002021008AE3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSRectangle/NSRectangle-Prefix.pch";
+				INFOPLIST_FILE = "NSRectangle/NSRectangle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C2E5DC9F15002021008AE3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSRectangle/NSRectangle-Prefix.pch";
+				INFOPLIST_FILE = "NSRectangle/NSRectangle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C2E5DCA115002021008AE3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSRectangle.app/Contents/MacOS/NSRectangle";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSRectangle/NSRectangle-Prefix.pch";
+				INFOPLIST_FILE = "NSRectangleTests/NSRectangleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C2E5DCA215002021008AE3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NSRectangle.app/Contents/MacOS/NSRectangle";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NSRectangle/NSRectangle-Prefix.pch";
+				INFOPLIST_FILE = "NSRectangleTests/NSRectangleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2E5DC6515002021008AE3A3 /* Build configuration list for PBXProject "NSRectangle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2E5DC9B15002021008AE3A3 /* Debug */,
+				C2E5DC9C15002021008AE3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2E5DC9D15002021008AE3A3 /* Build configuration list for PBXNativeTarget "NSRectangle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2E5DC9E15002021008AE3A3 /* Debug */,
+				C2E5DC9F15002021008AE3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C2E5DCA015002021008AE3A3 /* Build configuration list for PBXNativeTarget "NSRectangleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2E5DCA115002021008AE3A3 /* Debug */,
+				C2E5DCA215002021008AE3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C2E5DC6215002021008AE3A3 /* Project object */;
+}
