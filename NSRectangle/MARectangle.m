@@ -8,6 +8,8 @@
 
 #import "MARectangle.h"
 
+#import "MACoordinateSystem.h"
+
 
 @implementation MATwoElementCoordinate {
     @protected
@@ -62,7 +64,7 @@
 - (NSSize)sizeValueInCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
     NSSize size = *(NSSize *)_elements;
-    return [_coordinateSystem convertSize: toCoordinateSystem: coordinateSystem];
+    return [_coordinateSystem convertSize: size toCoordinateSystem: coordinateSystem];
 }
 
 @end

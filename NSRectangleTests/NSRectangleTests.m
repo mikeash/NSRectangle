@@ -8,25 +8,26 @@
 
 #import "NSRectangleTests.h"
 
+#import "MACoordinateSystem.h"
+#import "MARectangle.h"
+
+
 @implementation NSRectangleTests
 
-- (void)setUp
+- (void)testSameViewPointSize
 {
-    [super setUp];
+    NSPoint p = { 1, 2 };
+    NSSize s = { 3, 4 };
     
-    // Set-up code here.
-}
-
-- (void)tearDown
-{
-    // Tear-down code here.
+    NSWindow *w = [[NSWindow alloc] initWithContentRect: NSMakeRect(0, 0, 100, 100) styleMask: 0 backing: NSBackingStoreBuffered defer: YES];
+    NSView *v = [[NSView alloc] initWithFrame: NSMakeRect(0, 0, 100, 100)];
+    [[w contentView] addSubview: v];
     
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in NSRectangleTests");
+    MAPoint *pobj = [MAPoint pointWithNSPoint: p coordinateSystem: [[MACoordinateSystem alloc] initWithView: v]];
+    MASize *sobj = [MASize sizeWithNSSize: s coordinateSystem: [[MACoordinateSystem alloc] initWithView: v]];
+    
+    STAssertEquals(p, [pobj pointValueInCoordinateSystem: [[MACoordinateSystem alloc] initWithView: v]], @"Points are not equal");
+    STAssertEquals(s, [sobj sizeValueInCoordinateSystem: [[MACoordinateSystem alloc] initWithView: v]], @"Sizes are not equal");
 }
 
 @end
