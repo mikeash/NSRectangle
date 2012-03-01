@@ -17,6 +17,8 @@
 		C2E5DC8F15002021008AE3A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E5DC6F15002021008AE3A3 /* Cocoa.framework */; };
 		C2E5DC9715002021008AE3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E5DC9515002021008AE3A3 /* InfoPlist.strings */; };
 		C2E5DC9A15002021008AE3A3 /* NSRectangleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DC9915002021008AE3A3 /* NSRectangleTests.m */; };
+		C2E5DCA51500203E008AE3A3 /* MARectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DCA41500203E008AE3A3 /* MARectangle.m */; };
+		C2E5DCA8150020CD008AE3A3 /* MACoordinateSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DCA7150020CD008AE3A3 /* MACoordinateSystem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +37,24 @@
 		C2E5DC7215002021008AE3A3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C2E5DC7315002021008AE3A3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C2E5DC7415002021008AE3A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C2E5DC7715002021008AE3A3 /* NSRectangle-Info.plist */ = {isa = PBXFileReference; path = "NSRectangle-Info.plist"; sourceTree = "<group>"; };
+		C2E5DC7715002021008AE3A3 /* NSRectangle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSRectangle-Info.plist"; sourceTree = "<group>"; };
 		C2E5DC7915002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C2E5DC7B15002021008AE3A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C2E5DC7D15002021008AE3A3 /* NSRectangle-Prefix.pch */ = {isa = PBXFileReference; path = "NSRectangle-Prefix.pch"; sourceTree = "<group>"; };
+		C2E5DC7D15002021008AE3A3 /* NSRectangle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSRectangle-Prefix.pch"; sourceTree = "<group>"; };
 		C2E5DC7F15002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		C2E5DC8115002021008AE3A3 /* MAAppDelegate.h */ = {isa = PBXFileReference; path = MAAppDelegate.h; sourceTree = "<group>"; };
+		C2E5DC8115002021008AE3A3 /* MAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAAppDelegate.h; sourceTree = "<group>"; };
 		C2E5DC8215002021008AE3A3 /* MAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAAppDelegate.m; sourceTree = "<group>"; };
 		C2E5DC8515002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C2E5DC8C15002021008AE3A3 /* NSRectangleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSRectangleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E5DC8D15002021008AE3A3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C2E5DC9415002021008AE3A3 /* NSRectangleTests-Info.plist */ = {isa = PBXFileReference; path = "NSRectangleTests-Info.plist"; sourceTree = "<group>"; };
+		C2E5DC9415002021008AE3A3 /* NSRectangleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NSRectangleTests-Info.plist"; sourceTree = "<group>"; };
 		C2E5DC9615002021008AE3A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C2E5DC9815002021008AE3A3 /* NSRectangleTests.h */ = {isa = PBXFileReference; path = NSRectangleTests.h; sourceTree = "<group>"; };
+		C2E5DC9815002021008AE3A3 /* NSRectangleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSRectangleTests.h; sourceTree = "<group>"; };
 		C2E5DC9915002021008AE3A3 /* NSRectangleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSRectangleTests.m; sourceTree = "<group>"; };
+		C2E5DCA31500203E008AE3A3 /* MARectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARectangle.h; sourceTree = "<group>"; };
+		C2E5DCA41500203E008AE3A3 /* MARectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARectangle.m; sourceTree = "<group>"; };
+		C2E5DCA6150020CD008AE3A3 /* MACoordinateSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACoordinateSystem.h; sourceTree = "<group>"; };
+		C2E5DCA7150020CD008AE3A3 /* MACoordinateSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACoordinateSystem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,10 @@
 			children = (
 				C2E5DC8115002021008AE3A3 /* MAAppDelegate.h */,
 				C2E5DC8215002021008AE3A3 /* MAAppDelegate.m */,
+				C2E5DCA31500203E008AE3A3 /* MARectangle.h */,
+				C2E5DCA41500203E008AE3A3 /* MARectangle.m */,
+				C2E5DCA6150020CD008AE3A3 /* MACoordinateSystem.h */,
+				C2E5DCA7150020CD008AE3A3 /* MACoordinateSystem.m */,
 				C2E5DC8415002021008AE3A3 /* MainMenu.xib */,
 				C2E5DC7615002021008AE3A3 /* Supporting Files */,
 			);
@@ -263,6 +273,8 @@
 			files = (
 				C2E5DC7C15002021008AE3A3 /* main.m in Sources */,
 				C2E5DC8315002021008AE3A3 /* MAAppDelegate.m in Sources */,
+				C2E5DCA51500203E008AE3A3 /* MARectangle.m in Sources */,
+				C2E5DCA8150020CD008AE3A3 /* MACoordinateSystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
