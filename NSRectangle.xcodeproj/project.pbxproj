@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2B3C4AA15004C3E00742239 /* NSView+MARectangleAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3C4A915004C3E00742239 /* NSView+MARectangleAdditions.m */; };
+		C2B3C4AE15004ECB00742239 /* NSWindow+MARectangleAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3C4AD15004ECB00742239 /* NSWindow+MARectangleAdditions.m */; };
+		C2B3C4B115004F5B00742239 /* NSScreen+MARectangleAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B3C4B015004F5B00742239 /* NSScreen+MARectangleAdditions.m */; };
 		C2E5DC7015002021008AE3A3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E5DC6F15002021008AE3A3 /* Cocoa.framework */; };
 		C2E5DC7A15002021008AE3A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2E5DC7815002021008AE3A3 /* InfoPlist.strings */; };
 		C2E5DC7C15002021008AE3A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E5DC7B15002021008AE3A3 /* main.m */; };
@@ -32,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2B3C4A815004C3E00742239 /* NSView+MARectangleAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+MARectangleAdditions.h"; sourceTree = "<group>"; };
+		C2B3C4A915004C3E00742239 /* NSView+MARectangleAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+MARectangleAdditions.m"; sourceTree = "<group>"; };
+		C2B3C4AC15004ECB00742239 /* NSWindow+MARectangleAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+MARectangleAdditions.h"; sourceTree = "<group>"; };
+		C2B3C4AD15004ECB00742239 /* NSWindow+MARectangleAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+MARectangleAdditions.m"; sourceTree = "<group>"; };
+		C2B3C4AF15004F5B00742239 /* NSScreen+MARectangleAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScreen+MARectangleAdditions.h"; sourceTree = "<group>"; };
+		C2B3C4B015004F5B00742239 /* NSScreen+MARectangleAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScreen+MARectangleAdditions.m"; sourceTree = "<group>"; };
 		C2E5DC6B15002021008AE3A3 /* NSRectangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSRectangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E5DC6F15002021008AE3A3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C2E5DC7215002021008AE3A3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +135,12 @@
 				C2E5DCA41500203E008AE3A3 /* MARectangle.m */,
 				C2E5DCA6150020CD008AE3A3 /* MACoordinateSystem.h */,
 				C2E5DCA7150020CD008AE3A3 /* MACoordinateSystem.m */,
+				C2B3C4A815004C3E00742239 /* NSView+MARectangleAdditions.h */,
+				C2B3C4A915004C3E00742239 /* NSView+MARectangleAdditions.m */,
+				C2B3C4AC15004ECB00742239 /* NSWindow+MARectangleAdditions.h */,
+				C2B3C4AD15004ECB00742239 /* NSWindow+MARectangleAdditions.m */,
+				C2B3C4AF15004F5B00742239 /* NSScreen+MARectangleAdditions.h */,
+				C2B3C4B015004F5B00742239 /* NSScreen+MARectangleAdditions.m */,
 				C2E5DC8415002021008AE3A3 /* MainMenu.xib */,
 				C2E5DC7615002021008AE3A3 /* Supporting Files */,
 			);
@@ -275,6 +290,9 @@
 				C2E5DC8315002021008AE3A3 /* MAAppDelegate.m in Sources */,
 				C2E5DCA51500203E008AE3A3 /* MARectangle.m in Sources */,
 				C2E5DCA8150020CD008AE3A3 /* MACoordinateSystem.m in Sources */,
+				C2B3C4AA15004C3E00742239 /* NSView+MARectangleAdditions.m in Sources */,
+				C2B3C4AE15004ECB00742239 /* NSWindow+MARectangleAdditions.m in Sources */,
+				C2B3C4B115004F5B00742239 /* NSScreen+MARectangleAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +466,7 @@
 				C2E5DC9F15002021008AE3A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2E5DCA015002021008AE3A3 /* Build configuration list for PBXNativeTarget "NSRectangleTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +475,7 @@
 				C2E5DCA215002021008AE3A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
