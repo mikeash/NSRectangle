@@ -12,7 +12,6 @@ I propose a new class, let's call it NSRectangle, which would encompass the func
 
 There are obviously a lot of compatibility concerns which would require keeping the old structs around pretty much indefinitely. However, I think these new classes could still bring a lot of benefit and supersede the structs in a lot of cases.
 
-01-Mar-2012 03:30 PM Michael Ash:
 Here are some code examples of how this class might work and be used:
 
     // position a subview in the bottom middle of this view
