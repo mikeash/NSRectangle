@@ -36,4 +36,9 @@
 
 @interface MARectangle : NSObject
 
++ (instancetype)rectangleWithRect: (NSRect)r coordinateSystem: (MACoordinateSystem *)coordinateSystem;
+- (instancetype)initWithRect: (NSRect)r coordinateSystem: (MACoordinateSystem *)coordinateSystem;
+
+- (NSRect)rectValueInCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
+
 @end

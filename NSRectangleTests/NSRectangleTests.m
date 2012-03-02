@@ -94,5 +94,21 @@
     
     STAssertEquals(NSMakeSize(0.5, 1), [sobj sizeValueInCoordinateSystem: [[MACoordinateSystem alloc] initWithView: v2]], @"Sizes are not equal");
 }
+- (void)testDifferentWindowRect
+{
+    NSRect r = { 1, 2, 3, 4 };
+    
+    NSWindow *w = [[NSWindow alloc] initWithContentRect: NSMakeRect(0, 0, 100, 100) styleMask: 0 backing: NSBackingStoreBuffered defer: YES];
+    NSView *v = [[NSView alloc] initWithFrame: NSMakeRect(0, 0, 100, 100)];
+    [[w contentView] addSubview: v];
+    NSWindow *w2 = [[NSWindow alloc] initWithContentRect: NSMakeRect(50, 50, 100, 100) styleMask: 0 backing: NSBackingStoreBuffered defer: YES];
+    NSView *v2 = [[NSView alloc] initWithFrame: NSMakeRect(0, 0, 100, 100)];
+    [v2 scaleUnitSquareToSize: NSMakeSize(2, 2)];
+    [[w2 contentView] addSubview: v2];
+    
+    MARectangle *rect = [MARectangle rectangleWithRect: r coordinateSystem: [[MACoordinateSystem alloc] initWithView: v]];
+    
+    STAssertEquals(NSMakeRect(-24.5, -24, 1.5, 2), [rect rectValueInCoordinateSystem: [[MACoordinateSystem alloc] initWithView: v2]], @"Rects are not equal");
+}
 
 @end
