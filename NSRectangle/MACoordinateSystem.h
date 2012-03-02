@@ -10,14 +10,11 @@
 
 @interface MACoordinateSystem : NSObject
 
-- (instancetype)init; // designated initializer, creates a screen coordinate system
 - (instancetype)initWithScreenCoordinateSystem;
 - (instancetype)initWithWindow: (NSWindow *)window;
 - (instancetype)initWithView: (NSView *)view;
 
-- (NSWindow *)window;
-- (NSView *)view;
-
+- (NSRect)convertRect: (NSRect)r toCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
 - (NSPoint)convertPoint: (NSPoint)p toCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
 - (NSSize)convertSize: (NSSize)s toCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
 

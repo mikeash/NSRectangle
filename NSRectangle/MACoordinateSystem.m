@@ -8,117 +8,215 @@
 
 #import "MACoordinateSystem.h"
 
-@implementation MACoordinateSystem {
-    NSWindow *_window;
-    NSView *_view;
+@protocol _MACoordinateAdjacentConversion
+
+- (NSRect)MACoordinateAdjacentConversion_convertRect: (NSRect)r to: (id <_MACoordinateAdjacentConversion>)target;
+
+- (void)MACoordinateAdjacentConversion_enumerateConversionChainTo: (id <_MACoordinateAdjacentConversion>)target withBlock: (void (^)(id <_MACoordinateAdjacentConversion> nextTarget))block;
+
+- (BOOL)MACoordinateAdjacentConversion_isView;
+- (BOOL)MACoordinateAdjacentConversion_isWindow;
+- (BOOL)MACoordinateAdjacentConversion_isScreen;
+
+@end
+
+@interface _MACoordinateSystemScreen : NSObject <_MACoordinateAdjacentConversion>
++ (_MACoordinateSystemScreen *)screen;
+@end
+@interface NSWindow (_MACoordinateAdjacentConversion) <_MACoordinateAdjacentConversion>
+@end
+@interface NSView (_MACoordinateAdjacentConversion) <_MACoordinateAdjacentConversion>
+@end
+
+@implementation _MACoordinateSystemScreen
+
++ (_MACoordinateSystemScreen *)screen
+{
+    static _MACoordinateSystemScreen *screen;
+    static dispatch_once_t pred;
+    dispatch_once(&pred, ^{ screen = [[self alloc] init]; });
+    return screen;
 }
 
-- (instancetype)init
+- (NSRect)MACoordinateAdjacentConversion_convertRect: (NSRect)r to: (id <_MACoordinateAdjacentConversion>)target
 {
-    return [super init];
+    if([target MACoordinateAdjacentConversion_isScreen])
+        return r;
+    else if([target MACoordinateAdjacentConversion_isWindow])
+        return [(NSWindow *)target convertRectFromScreen: r];
+    
+    NSLog(@"Cannot convert directly from screen to target %@", target);
+    abort();
+}
+
+- (void)MACoordinateAdjacentConversion_enumerateConversionChainTo: (id <_MACoordinateAdjacentConversion>)target withBlock: (void (^)(id <_MACoordinateAdjacentConversion> nextTarget))block
+{
+    if([target MACoordinateAdjacentConversion_isWindow])
+    {
+        block(target);
+    }
+    else if([target MACoordinateAdjacentConversion_isView])
+    {
+        block([(NSView *)target window]);
+        [target MACoordinateAdjacentConversion_enumerateConversionChainTo: target withBlock: block];
+    }
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isView
+{
+    return NO;
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isWindow
+{
+    return NO;
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isScreen
+{
+    return YES;
+}
+
+@end
+
+@implementation NSWindow (_MACoordinateAdjacentConversion)
+
+- (NSRect)MACoordinateAdjacentConversion_convertRect: (NSRect)r to: (id <_MACoordinateAdjacentConversion>)target
+{
+    if([target MACoordinateAdjacentConversion_isScreen])
+        return [self convertRectToScreen: r];
+    else if([target MACoordinateAdjacentConversion_isView])
+        return [(NSView *)target convertRect: r fromView: nil];
+    
+    NSLog(@"Cannot convert directly from window %@ to target %@", self, target);
+    abort();
+}
+
+- (void)MACoordinateAdjacentConversion_enumerateConversionChainTo: (id <_MACoordinateAdjacentConversion>)target withBlock: (void (^)(id <_MACoordinateAdjacentConversion> nextTarget))block
+{
+    if([target MACoordinateAdjacentConversion_isView] && [(NSView *)target window] == self)
+    {
+        block(target);
+    }
+    else
+    {
+        block([_MACoordinateSystemScreen screen]);
+        if(target != [_MACoordinateSystemScreen screen])
+            [[_MACoordinateSystemScreen screen] MACoordinateAdjacentConversion_enumerateConversionChainTo: target withBlock: block];
+    }
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isView
+{
+    return NO;
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isWindow
+{
+    return YES;
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isScreen
+{
+    return NO;
+}
+
+@end
+
+@implementation NSView (_MACoordinateAdjacentConversion)
+
+- (NSRect)MACoordinateAdjacentConversion_convertRect: (NSRect)r to: (id <_MACoordinateAdjacentConversion>)target
+{
+    if([target MACoordinateAdjacentConversion_isView])
+        return [self convertRect: r toView: (NSView *)target];
+    else if([target MACoordinateAdjacentConversion_isWindow])
+        return [self convertRect: r toView: nil];
+    
+    NSLog(@"Cannot convert directly from view %@ to target %@", self, target);
+    abort();
+}
+
+- (void)MACoordinateAdjacentConversion_enumerateConversionChainTo: (id <_MACoordinateAdjacentConversion>)target withBlock: (void (^)(id <_MACoordinateAdjacentConversion> nextTarget))block
+{
+    if([target MACoordinateAdjacentConversion_isView] && [self ancestorSharedWithView: (NSView *)target])
+    {
+        block(target);
+    }
+    else
+    {
+        block([self window]);
+        if(target != [self window])
+            [[self window] MACoordinateAdjacentConversion_enumerateConversionChainTo: target withBlock: block];
+    }
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isView
+{
+    return YES;
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isWindow
+{
+    return NO;
+}
+
+- (BOOL)MACoordinateAdjacentConversion_isScreen
+{
+    return NO;
+}
+
+@end
+
+@implementation MACoordinateSystem {
+    id <_MACoordinateAdjacentConversion> _underlyingTarget;
+}
+
+- (instancetype)initWithTarget: (id <_MACoordinateAdjacentConversion>)target
+{
+    if((self = [super init]))
+    {
+        _underlyingTarget = target;
+    }
+    return self;
 }
 
 - (instancetype)initWithScreenCoordinateSystem
 {
-    return [self init];
+    return [self initWithTarget: [_MACoordinateSystemScreen screen]];
 }
 
 - (instancetype)initWithWindow: (NSWindow *)window
 {
-    if((self = [self init]))
-    {
-        _window = window;
-    }
-    return self;
+    return [self initWithTarget: window];
 }
 
 - (instancetype)initWithView: (NSView *)view
 {
-    if((self = [self init]))
-    {
-        _view = view;
-    }
-    return self;
+    return [self initWithTarget: view];
 }
 
-- (MACoordinateSystem *)_commonAncestorWith: (MACoordinateSystem *)coordinateSystem
+- (NSRect)convertRect: (NSRect)r toCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
-    if(_view && [coordinateSystem view] && [_view ancestorSharedWithView: [coordinateSystem view]])
-        return [[[self class] alloc] initWithWindow: [_view window]];
-    
-    return [[[self class] alloc] initWithScreenCoordinateSystem];
-}
-
-- (NSWindow *)window
-{
-    return _window;
-}
-
-- (NSView *)view
-{
-    return _view;
+    __block NSRect result = r;
+    __block id <_MACoordinateAdjacentConversion> previousTarget = _underlyingTarget;
+    [_underlyingTarget
+     MACoordinateAdjacentConversion_enumerateConversionChainTo: coordinateSystem->_underlyingTarget
+     withBlock: ^(id<_MACoordinateAdjacentConversion> nextTarget) {
+         result = [previousTarget MACoordinateAdjacentConversion_convertRect: result to: nextTarget];
+         previousTarget = nextTarget;
+     }];
+    return result;
 }
 
 - (NSPoint)convertPoint: (NSPoint)p toCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
-    MACoordinateSystem *commonAncestor = [self _commonAncestorWith: coordinateSystem];
-    
-    if(_view)
-    {
-        p = [_view convertPoint: p toView: nil];
-        if(![commonAncestor window])
-            p = [[_view window] convertRectToScreen: (NSRect){ p, NSZeroSize }].origin;
-    }
-    else if(_window)
-    {
-        if(![commonAncestor window])
-            p = [[_view window] convertRectToScreen: (NSRect){ p, NSZeroSize }].origin;
-    }
-    
-    if([coordinateSystem view])
-    {
-        if(![commonAncestor window])
-            p = [[[coordinateSystem view] window] convertRectFromScreen: (NSRect){ p, NSZeroSize }].origin;
-        p = [[coordinateSystem view] convertPoint: p fromView: nil];
-    }
-    else if([coordinateSystem window])
-    {
-        if(![commonAncestor window])
-            p = [[[coordinateSystem view] window] convertRectFromScreen: (NSRect){ p, NSZeroSize }].origin;
-    }
-    
-    return p;
+    return [self convertRect: (NSRect){ p, NSZeroSize } toCoordinateSystem: coordinateSystem].origin;
 }
 
 - (NSSize)convertSize: (NSSize)s toCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
-    MACoordinateSystem *commonAncestor = [self _commonAncestorWith: coordinateSystem];
-    
-    if(_view)
-    {
-        s = [_view convertSize: s toView: nil];
-        if(![commonAncestor window])
-            s = [[_view window] convertRectToScreen: (NSRect){ NSZeroPoint, s }].size;
-    }
-    else if(_window)
-    {
-        if(![commonAncestor window])
-            s = [[_view window] convertRectToScreen: (NSRect){ NSZeroPoint, s }].size;
-    }
-    
-    if([coordinateSystem view])
-    {
-        if(![commonAncestor window])
-            s = [[[coordinateSystem view] window] convertRectFromScreen: (NSRect){ NSZeroPoint, s }].size;
-        s = [[coordinateSystem view] convertSize: s fromView: nil];
-    }
-    else if([coordinateSystem window])
-    {
-        if(![commonAncestor window])
-            s = [[[coordinateSystem view] window] convertRectFromScreen: (NSRect){ NSZeroPoint, s }].size;
-    }
-    
-    return s;
+    return [self convertRect: (NSRect){ NSZeroPoint, s } toCoordinateSystem: coordinateSystem].size;
+
 }
 
 @end
