@@ -133,5 +133,11 @@
     return [self addSizeToOrigin: size];
 }
 
+- (instancetype)setOrigin: (MAPoint *)point
+{
+    NSPoint origin = [point pointValueInCoordinateSystem: _coordinateSystem];
+    NSRect newR = { origin, _r.size };
+    return [[self class] rectangleWithRect: newR coordinateSystem: _coordinateSystem];
+}
 
 @end

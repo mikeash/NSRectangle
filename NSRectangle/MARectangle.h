@@ -48,4 +48,6 @@
 - (instancetype)addY: (CGFloat)delta;
 - (instancetype)addY: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
 
+- (instancetype)setOrigin: (MAPoint *)point;
+
 @end

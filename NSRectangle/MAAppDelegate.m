@@ -9,6 +9,7 @@
 #import "MAAppDelegate.h"
 
 #import "MARectangle.h"
+#import "NSScreen+MARectangleAdditions.h"
 #import "NSView+MARectangleAdditions.h"
 #import "NSWindow+MARectangleAdditions.h"
 
@@ -37,7 +38,8 @@
     [[_window contentView] addSubview: v];
     [v ma_setFrameRectangle: [[_window contentView] ma_frameRectangle]];
     
-    w = [[NSWindow alloc] initWithContentMARectangle: [[[v ma_frameRectangle] addX: 42] addY: 99] styleMask: NSTitledWindowMask backing: NSBackingStoreBuffered defer: YES];
+    MARectangle *newWindowRect = [[v ma_frameRectangle] setOrigin: [MAPoint pointWithNSPoint: NSMakePoint(50, 50) coordinateSystem: [NSScreen ma_coordinateSystem]]];
+    w = [[NSWindow alloc] initWithContentMARectangle: newWindowRect styleMask: NSTitledWindowMask backing: NSBackingStoreBuffered defer: YES];
     TestView *v2 = [[TestView alloc] init];
     [[w contentView] addSubview: v2];
     [v2 ma_setFrameRectangle: [[w contentView] ma_frameRectangle]];
