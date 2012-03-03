@@ -104,43 +104,43 @@
     return [_coordinateSystem convertRect: _r toCoordinateSystem: coordinateSystem];
 }
 
-- (instancetype)addSizeToOrigin: (MASize *)size
+- (instancetype)byAddingSizeToOrigin: (MASize *)size
 {
     NSSize delta = [size sizeValueInCoordinateSystem: _coordinateSystem];
     NSRect newR = NSOffsetRect(_r, delta.width, delta.height);
     return [[self class] rectangleWithRect: newR coordinateSystem: _coordinateSystem];
 }
 
-- (instancetype)addX: (CGFloat)delta
+- (instancetype)byAddingX: (CGFloat)delta
 {
-    return [self addX: delta inCoordinateSystem: _coordinateSystem];
+    return [self byAddingX: delta inCoordinateSystem: _coordinateSystem];
 }
 
-- (instancetype)addX: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem
+- (instancetype)byAddingX: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
     MASize *size = [MASize sizeWithNSSize: NSMakeSize(delta, 0) coordinateSystem: coordinateSystem];
-    return [self addSizeToOrigin: size];
+    return [self byAddingSizeToOrigin: size];
 }
 
-- (instancetype)addY: (CGFloat)delta
+- (instancetype)byAddingY: (CGFloat)delta
 {
-    return [self addY: delta inCoordinateSystem: _coordinateSystem];
+    return [self byAddingY: delta inCoordinateSystem: _coordinateSystem];
 }
 
-- (instancetype)addY: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem
+- (instancetype)byAddingY: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
     MASize *size = [MASize sizeWithNSSize: NSMakeSize(0, delta) coordinateSystem: coordinateSystem];
-    return [self addSizeToOrigin: size];
+    return [self byAddingSizeToOrigin: size];
 }
 
-- (instancetype)setOrigin: (MAPoint *)point
+- (instancetype)withOrigin: (MAPoint *)point
 {
     NSPoint origin = [point pointValueInCoordinateSystem: _coordinateSystem];
     NSRect newR = { origin, _r.size };
     return [[self class] rectangleWithRect: newR coordinateSystem: _coordinateSystem];
 }
 
-- (instancetype)setSize: (MASize *)size
+- (instancetype)withSize: (MASize *)size
 {
     NSSize s = [size sizeValueInCoordinateSystem: _coordinateSystem];
     NSRect newR = { _r.origin, s };

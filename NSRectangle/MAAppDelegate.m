@@ -38,7 +38,7 @@
     [[_window contentView] addSubview: v];
     [v ma_setFrameRectangle: [[_window contentView] ma_frameRectangle]];
     
-    MARectangle *newWindowRect = [[v ma_frameRectangle] setSize: [MASize sizeWithNSSize: NSMakeSize(50, 50) coordinateSystem: [NSScreen ma_coordinateSystem]]];
+    MARectangle *newWindowRect = [[v ma_frameRectangle] withSize: [MASize sizeWithNSSize: NSMakeSize(50, 50) coordinateSystem: [NSScreen ma_coordinateSystem]]];
     w = [[NSWindow alloc] initWithContentMARectangle: newWindowRect styleMask: NSTitledWindowMask backing: NSBackingStoreBuffered defer: YES];
     TestView *v2 = [[TestView alloc] init];
     [[w contentView] addSubview: v2];
