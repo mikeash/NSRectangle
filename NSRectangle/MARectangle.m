@@ -70,8 +70,8 @@
 @end
 
 @implementation MARectangle {
-    MAPoint *_origin;
-    MASize *_size;
+    NSRect _r;
+    MACoordinateSystem *_coordinateSystem;
 }
 
 + (instancetype)rectangleWithRect: (NSRect)r coordinateSystem: (MACoordinateSystem *)coordinateSystem
@@ -83,20 +83,15 @@
 {
     if((self = [super init]))
     {
-        _origin = [MAPoint pointWithNSPoint: r.origin coordinateSystem: coordinateSystem];
-        _size = [MASize sizeWithNSSize: r.size coordinateSystem: coordinateSystem];
+        _r = r;
+        _coordinateSystem = coordinateSystem;
     }
     return self;
 }
 
 - (NSRect)rectValueInCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
-    NSRect r;
-    
-    r.origin = [_origin pointValueInCoordinateSystem: coordinateSystem];
-    r.size = [_size sizeValueInCoordinateSystem: coordinateSystem];
-    
-    return r;
+    return [_coordinateSystem convertRect: _r toCoordinateSystem: coordinateSystem];
 }
 
 @end
