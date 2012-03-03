@@ -16,7 +16,7 @@
 - (id)initWithContentMARectangle: (MARectangle *)contentRectangle styleMask: (NSUInteger)aStyle backing: (NSBackingStoreType)bufferingType defer: (BOOL)flag;
 
 - (MACoordinateSystem *)ma_coordinateSystem;
-- (MARectangle *)frameRectangle;
-- (void)setFrameRectangle: (MARectangle *)rect;
+- (MARectangle *)ma_frameRectangle;
+- (void)ma_setFrameRectangle: (MARectangle *)rect;
 
 @end

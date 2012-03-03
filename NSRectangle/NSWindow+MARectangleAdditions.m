@@ -26,12 +26,12 @@
     return [[MACoordinateSystem alloc] initWithWindow: self];
 }
 
-- (MARectangle *)frameRectangle
+- (MARectangle *)ma_frameRectangle
 {
     return [MARectangle rectangleWithRect: [self frame] coordinateSystem: [NSScreen ma_coordinateSystem]];
 }
 
-- (void)setFrameRectangle: (MARectangle *)rect
+- (void)ma_setFrameRectangle: (MARectangle *)rect
 {
     NSRect r = [rect rectValueInCoordinateSystem: [NSScreen ma_coordinateSystem]];
     [self setFrame: r display: YES];
