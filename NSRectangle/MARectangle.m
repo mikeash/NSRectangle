@@ -140,4 +140,11 @@
     return [[self class] rectangleWithRect: newR coordinateSystem: _coordinateSystem];
 }
 
+- (instancetype)setSize: (MASize *)size
+{
+    NSSize s = [size sizeValueInCoordinateSystem: _coordinateSystem];
+    NSRect newR = { _r.origin, s };
+    return [[self class] rectangleWithRect: newR coordinateSystem: _coordinateSystem];
+}
+
 @end
