@@ -18,8 +18,9 @@
 
 - (void)drawRect: (NSRect)r
 {
+    NSRect bounds = [self bounds];
     [[NSColor redColor] setStroke];
-    [NSBezierPath strokeLineFromPoint: r.origin toPoint: NSMakePoint(NSMaxX(r), NSMaxY(r))];
+    [NSBezierPath strokeLineFromPoint: bounds.origin toPoint: NSMakePoint(NSMaxX(bounds), NSMaxY(bounds))];
 }
 
 @end
@@ -36,10 +37,10 @@
     [[_window contentView] addSubview: v];
     [v ma_setFrameRectangle: [[_window contentView] ma_frameRectangle]];
     
-    w = [[NSWindow alloc] initWithContentMARectangle: [[[v ma_frameRectangle] addX: 42] addY: 99] styleMask: 0 backing: NSBackingStoreBuffered defer: YES];
+    w = [[NSWindow alloc] initWithContentMARectangle: [[[v ma_frameRectangle] addX: 42] addY: 99] styleMask: NSTitledWindowMask backing: NSBackingStoreBuffered defer: YES];
     TestView *v2 = [[TestView alloc] init];
     [[w contentView] addSubview: v2];
-    [v2 ma_setFrameRectangle: [w ma_frameRectangle]];
+    [v2 ma_setFrameRectangle: [[w contentView] ma_frameRectangle]];
     [w makeKeyAndOrderFront: nil];
 }
 
