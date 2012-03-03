@@ -8,6 +8,7 @@
 
 #import "MAAppDelegate.h"
 
+#import "MARectangle.h"
 #import "NSView+MARectangleAdditions.h"
 #import "NSWindow+MARectangleAdditions.h"
 
@@ -35,11 +36,11 @@
     [[_window contentView] addSubview: v];
     [v ma_setFrameRectangle: [[_window contentView] ma_frameRectangle]];
     
-    w = [[NSWindow alloc] initWithContentMARectangle: [v ma_frameRectangle] styleMask: 0 backing: NSBackingStoreBuffered defer: YES];
+    w = [[NSWindow alloc] initWithContentMARectangle: [[[v ma_frameRectangle] addX: 42] addY: 99] styleMask: 0 backing: NSBackingStoreBuffered defer: YES];
     TestView *v2 = [[TestView alloc] init];
     [[w contentView] addSubview: v2];
-    [v2 ma_setFrameRectangle: [v ma_frameRectangle]];
-    [w orderFront: nil];
+    [v2 ma_setFrameRectangle: [w ma_frameRectangle]];
+    [w makeKeyAndOrderFront: nil];
 }
 
 @end

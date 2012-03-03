@@ -104,4 +104,34 @@
     return [_coordinateSystem convertRect: _r toCoordinateSystem: coordinateSystem];
 }
 
+- (instancetype)addSizeToOrigin: (MASize *)size
+{
+    NSSize delta = [size sizeValueInCoordinateSystem: _coordinateSystem];
+    NSRect newR = NSOffsetRect(_r, delta.width, delta.height);
+    return [[self class] rectangleWithRect: newR coordinateSystem: _coordinateSystem];
+}
+
+- (instancetype)addX: (CGFloat)delta
+{
+    return [self addX: delta inCoordinateSystem: _coordinateSystem];
+}
+
+- (instancetype)addX: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem
+{
+    MASize *size = [MASize sizeWithNSSize: NSMakeSize(delta, 0) coordinateSystem: coordinateSystem];
+    return [self addSizeToOrigin: size];
+}
+
+- (instancetype)addY: (CGFloat)delta
+{
+    return [self addY: delta inCoordinateSystem: _coordinateSystem];
+}
+
+- (instancetype)addY: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem
+{
+    MASize *size = [MASize sizeWithNSSize: NSMakeSize(0, delta) coordinateSystem: coordinateSystem];
+    return [self addSizeToOrigin: size];
+}
+
+
 @end

@@ -41,4 +41,11 @@
 
 - (NSRect)rectValueInCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
 
+- (instancetype)addSizeToOrigin: (MASize *)size;
+
+- (instancetype)addX: (CGFloat)delta;
+- (instancetype)addX: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
+- (instancetype)addY: (CGFloat)delta;
+- (instancetype)addY: (CGFloat)delta inCoordinateSystem: (MACoordinateSystem *)coordinateSystem;
+
 @end
