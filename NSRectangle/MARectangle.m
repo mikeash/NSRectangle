@@ -27,6 +27,11 @@
     return self;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat: @"<%@ %p: (%f, %f) %@>", [self class], self, _elements[0], _elements[1], _coordinateSystem];
+}
+
 - (CGFloat *)elements
 {
     return _elements;
@@ -87,6 +92,11 @@
         _coordinateSystem = coordinateSystem;
     }
     return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat: @"<%@ %p: %@ %@>", [self class], self, NSStringFromRect(_r), _coordinateSystem];
 }
 
 - (NSRect)rectValueInCoordinateSystem: (MACoordinateSystem *)coordinateSystem

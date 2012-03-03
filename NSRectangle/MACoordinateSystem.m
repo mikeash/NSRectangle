@@ -195,6 +195,11 @@
     return [self initWithTarget: view];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat: @"<%@ %p: %@>", [self class], self, _underlyingTarget];
+}
+
 - (NSRect)convertRect: (NSRect)r toCoordinateSystem: (MACoordinateSystem *)coordinateSystem
 {
     __block NSRect result = r;
